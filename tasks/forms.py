@@ -39,9 +39,10 @@ class EditTaskForm(forms.ModelForm):
         fields = ["title", "subject", "due_date", "priority", "urgent"]
 
     due_date = forms.DateField(
+        required=False,
         validators=[
-            max_date,
-        ]
+            max_due_date,
+        ],
     )
 
     # def clean_due_date(self):
