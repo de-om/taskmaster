@@ -1,0 +1,26 @@
+{% load static %}
+<html>
+  <head>
+    <title>{{ title }}</title> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel='stylesheet' type='text/css' href="{% static 'tasks/bulma.css' %}">
+    <link rel='stylesheet' href="{% static 'tasks/styles.css' %}">
+  </head>
+  <body>
+    {% include 'tasks/navbar.html' %}
+
+    <h1 class='title'>TaskMaster</h1>
+    <h3 class='title'>Tu gestor de tareas definiti<u>ʌo</u></h3>
+    <h2 class='subtitle'>{{ title }}</h2>
+
+    {% block content %}
+    {% endblock content %}
+
+    <div>
+      <p id='trademark'>© Copyright TaskMaster 2023</p>
+      <a href="http://python.org">Python</a>
+      <a href="http://github.com/de-om">GitHub</a>
+    </div>
+    
+  </body>
+</html>

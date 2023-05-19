@@ -1,0 +1,98 @@
+#subjects {
+    border: 3px solid #090994;
+    background-color: aquamarine;
+    font-size: 128%;
+}
+body {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: blueviolet;
+}
+* {
+    background-color: #e0e8c5
+}
+h1, h2 {
+    color: darkgreen
+}
+.title {
+    text-align: center;
+    font-size: 22px
+}
+th {
+    color: darkblue;
+    background-color: #cadaff
+}
+td {
+    color: navy;
+    background-color: lightgrey
+}
+li:first-child {
+    font-weight: 850;
+    color: pink
+}
+li:last-child {
+    font-weight: 600;
+    color: yellow
+}
+#trademark {
+    font-size: 9px;
+    text-align: right;
+    border-top: 1px solid black;
+    margin: 11px;
+    font-weight: bolder
+}
+[disabled] {
+    font-size: 50%;
+    font-style: italic
+}
+[href*="github"] {
+    border: 1px solid black;
+    padding: 10px
+}
+section.news p {
+    text-align: center;
+    border: 1px solid black;
+}
+section.news p:hover {
+    transform: rotate(2deg)
+}
+section.news > p {
+    transform: rotate(-2deg);
+    padding: 30px
+}
+td.urgent-task {
+    font-weight: bolder;
+    color: darkred
+}
+td.not-urgent-task {
+    font-style: italic;
+    color: darkgreen
+}
+a:hover {
+    background-color: red;
+    font-weight: 300;
+    cursor: crosshair
+}
+a:active {
+    background-color: blue;
+    border: 5px solid green
+}
+.fuera {
+    height: 60px;
+    background-color: cyan
+}
+.dentro {
+    background-color: magenta;
+    padding: 5px;
+    border: 10px solid black;
+    margin: 20px
+}
+p {
+    font-family: "CMU Bright", Arial, Verdana, sans-serif;
+    font-size: 120%;
+    font-style: italic;
+    font-variant: small-caps;
+    font-weight: 850;
+    line-height: 150%;
+    text-align: justify;
+    text-justify: inter-word;
+}

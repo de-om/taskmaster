@@ -1,0 +1,49 @@
+{% load static %}
+<html>
+  <head>
+    <title>{{ title }}</title> 
+    <link rel='stylesheet' type='text/css' href="{% static 'tasks/custom.css' %}">
+  </head>
+  <body>
+    <h1>TaskMaster</h1>
+    <h3 class='title'>Tu gestor de tareas definiti<u>no</u></h3>
+    <h2>{{ title }}</h2>
+
+    {% block content %}
+    {% endblock content %}
+
+    <section class="news">
+      <p>Últimas noticias</p>
+      <div>
+        <p>
+          Not a paragraph directly son of section.news (>).
+        </p>
+      </div>
+    </section>
+    <div>
+    <button>Activado</button>
+    <button disabled>Desactivado</button>
+    <a href="http://python.org">Python</a>
+    <a href="http://github.com" disabled>GitHub</a>
+    </div>
+    <div>
+      <ul>
+        <li>Tester 1</li>
+        <li>Tester 2</li>
+        <li>Tester 3</li>
+      </ul>
+    </div>
+    <div>
+      <p>
+        {% lorem 2 b random %}
+      </p>
+    </div>
+    <div class="fuera">
+      <div class="dentro">
+        Contenido
+      </div>
+    </div>
+
+    <p id='trademark'>© Copyright TaskMaster 2023</p>
+  </body>
+</html>

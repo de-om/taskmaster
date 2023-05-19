@@ -1,0 +1,67 @@
+{% extends 'tasks/base.html' %}
+{% load static %}
+
+{% block content %}
+<form action=".">
+    <p>input (type=text)<input type='text' name='username'></p>
+    <p>input (type=password)<input type='password' name='password'></p>
+    <p>input (type=checkbox)<input type='checkbox' name='checkbox'></p>
+    <p>input (type=radio)<input type='radio' name='radio'></p>
+    <p>input (type=file)<input type='file' name='file'></p>
+    <p>input (type=hidden)<input type='hidden' name='hidden' value='obligatorio_name_value'></p>
+    <p>input (type=image)<input type='image' name='image' src="{% static 'tasks/login-button.png' %}"></p>
+    {% comment %} sirve para hacer submit/POST {% endcomment %}
+    <p>input (type=submit)<input type='submit' name='submit'></p>
+
+    <h2>HTML5</h2>
+    {% comment %} required obliga a rellenar el campo {% endcomment %}
+    <p>input (type=color)<input type='color' name='color'></p>
+    <p>input (type=date)<input type='date' name='date'></p>
+    <p>input (type=datetime-local)<input type='datetime-local' name='datetime-local'></p>
+    <p>input (type=email)<input type='email' name='email'></p>
+    <p>input (type=url)<input type='url' name='url'></p> 
+    <p>input (type=tel)<input type='tel' name='tel' pattern='\d\d\d \d\d\d \d\d\d'></p>
+    <p>input (type=month)<input type='month' name='month'></p>
+    <p>input (type=month)<input type='month' name='month'></p>
+    <p>input (type=number)<input type='number' name='number'></p>
+
+    <p>
+        <input type="range" name="range"
+                id="slider"
+                min="0" step="10" max="100">
+    Value: <output id="value"></output>
+    </p>
+
+    <p>input (type=search)<input type="search" name="query"></p>
+    <p>
+        textarea<textarea name='texto' cols='80' rows='5' minlength='50' maxlength='1024'>Aquí su texto:</textarea>
+    </p>
+    <p>
+        <label for='cb-ninja'>Selecciona una tortuga ninja:</label>
+        <select>
+            <option value='leo'>Leonardo</option>
+            <option value='mike'>Michelangelo</option>
+            <option value='don'>Donatello</option>
+            <option value='ralph' selected>Raphael</option>
+        </select>
+    </p>
+    <fieldset>
+        <legend>Descripción del subformulario</legend>
+    </fieldset>
+
+
+
+</form>
+
+<script>
+    {% comment %} alert("Funciona!"); {% endcomment %}
+    const value = document.querySelector("#value");
+    const input = document.querySelector("#slider");
+    console.log('Funciona');
+    value.textContent = input.value;
+    input.addEventListener("input", (event) => {
+        value.textContent = event.target.value;
+    });
+</script>
+
+{% endblock content %}

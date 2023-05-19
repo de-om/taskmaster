@@ -1,0 +1,33 @@
+#subjects {
+    background-color: aquamarine;
+    font-size: 128%;
+}
+body {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: blueviolet;
+    background-color: #e0e8c5
+}
+#trademark {
+    font-size: 9px;
+    text-align: right;
+    border-top: 1px solid black;
+    margin: 11px;
+    font-weight: bolder
+}
+td.urgent-task {
+    font-weight: bolder;
+    color: darkred
+}
+td.not-urgent-task {
+    font-style: italic;
+    color: darkgreen
+}
+a:hover {
+    background-color: red;
+    font-weight: 300;
+    cursor: crosshair
+}
+a:active {
+    background-color: blue;
+    border: 5px solid green
+}

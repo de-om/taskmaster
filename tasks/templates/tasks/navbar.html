@@ -1,0 +1,116 @@
+{% load static %}
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">
+        <img src="{% static 'tasks/img/logo.png' %}" width="28" height="28">
+      </a>
+  
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+  
+    <div id="task-navbar" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item" href="/">
+          Home
+        </a>
+  
+        <a class="navbar-item" href="/tareas">
+          Tareas
+        </a>
+
+        <a class="navbar-item" href="/añadir/">
+          Nueva tarea
+        </a>
+  
+        <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+                Prioridades
+            </a>
+            <div class="navbar-dropdown">
+                <a class="navbar-item" href="/tareas/l">
+                Baja
+                </a>
+                <a class="navbar-item" href="/tareas/n">
+                Media
+                </a>
+                <a class="navbar-item" href="/tareas/h">
+                Alta
+                </a>
+            </div>
+        </div>
+
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            Más
+          </a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="/temas">
+            Temas
+            </a>
+            <a class="navbar-item" href="/lab">
+            Labs
+            </a>
+            <a class="navbar-item">
+            About
+            </a>
+            <a class="navbar-item">
+            Contact
+            </a>
+            <hr class="navbar-divider">
+            <a class="navbar-item">
+              Report an issue
+            </a>
+            <a class="navbar-item" href="/admin">
+                Admin
+            </a>
+          </div>
+        </div>
+      </div>
+
+    <div class="navbar-item">
+        <form method='POST' action="/search/">
+            {% csrf_token %}
+            <div class="field has-addons">
+                <div class="control">
+                    <input type='search' name='query'
+                        value="{{ query }}" placeholder="Buscar tareas..."
+                        class="input is-rounded">
+                </div>
+                <div class="control">
+                    <button type="submit" class="button is-info is-rounded">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </div>
+            </div>
+            
+            {% comment %} <div>
+              Prioridad:
+              <input type='checkbox' name='priority' value='L' id='chk_baja'>
+              <label for='chk_baja'>Baja</label>
+              <input type='checkbox' name='priority' value='N' id='chk_normal'>
+              <label for='chk_normal'>Normal</label>
+              <input type='checkbox' name='priority' value='H' id='chk_alta'>
+              <label for='chk_alta'>Alta</label>
+            </div> {% endcomment %}
+          </form>
+      </div>
+  
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="buttons">
+            <a class="button is-primary">
+              <strong>Sign up</strong>
+            </a>
+            <a class="button is-light">
+              Log in
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+</nav>
