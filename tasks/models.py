@@ -63,6 +63,7 @@ class Task(models.Model):  # en singular
     )
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
+    is_complete = models.BooleanField("completada", default=False)
 
     def __str__(self):
         return f"Tarea #{self.pk}: {self.title} [{self.due_date}]"

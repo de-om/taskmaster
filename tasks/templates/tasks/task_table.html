@@ -1,6 +1,7 @@
 <table class="table is-striped is-hoverable">
     <tr>
         <th>ID de tarea</th>
+        <th>Completada</th>
         <th>Título</th>
         <th>Fecha límite</th>
         <th>Prioridad</th>
@@ -12,6 +13,15 @@
             <a href='/tareas/{{ task.id }}/'>
                 {{ task.id }}
             </a>
+        </td>
+        <td>
+            {% if task.is_complete %}
+                Completada
+            {% else %}
+            <a href="{% url 'completar' pk=task.pk %}" class="button is-warning">
+                Completar
+            </a>
+            {% endif %}
         </td>
         <td>
             {% if forloop.first %}

@@ -26,6 +26,8 @@ urlpatterns = [
     path("tareas/", views.list_tasks, name="list_tasks"),
     path("tareas/<int:pk>/", views.task_detail),
     path("tareas/<int:pk>/editar/", views.edit_task, name="edit_task"),
+    path("tareas/completar/<int:pk>/", views.complete_task, name="completar"),
+    path("tareas/borrar/<int:pk>/", views.delete_task, name="borrar"),
     path("tareas/calendar/<int:year>/", views.list_tasks_per_year),
     path("search/", views.search_task),
     re_path(r"^tareas/([lnh])/$", views.list_tasks_by_priority),

@@ -1,16 +1,16 @@
 {% extends 'tasks/base.html' %}
 
 {% block content %}
+{% comment %} <table>
+    {% for task in subject.tasks.all %}
+    <tr>
+        <td>{{ task.title }}</td>
+        <td>{{ task.due_date }}</td>
+    </tr>
+    {% endfor %}
+</table> {% endcomment %}
+{% include "tasks/task_table.html" %}
 <p>
     Creado el {{ subject.created }} y actualizado el {{ subject.updated }}
 </p>
-
-<table>
-{% for task in subject.tasks.all %}
-<tr>
-    <td>{{ task.title }}</td>
-    <td>{{ task.due_date }}</td>
-</tr>
-{% endfor %}
-</table>
 {% endblock content %}

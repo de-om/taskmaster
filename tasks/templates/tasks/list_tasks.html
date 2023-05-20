@@ -4,4 +4,10 @@
 
   {% include 'tasks/task_table.html' %}
 
+  {% if task_detail %}
+    <a href="{% url 'borrar' pk=tasks.0.pk %}" class="button is-danger">
+      Borrar tarea
+    </a>
+  {% endif %}
+
 {% endblock content %}

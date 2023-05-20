@@ -37,7 +37,7 @@ def list_tasks(request):
     )
 
 
-def task_detail(request, pk):
+def task_detail(request, pk):  # Improve this!
     if task := Task.objects.filter(pk=pk):
         return render(
             request,
@@ -45,6 +45,7 @@ def task_detail(request, pk):
             {
                 "title": f"Tarea número {pk}",
                 "tasks": task,
+                "task_detail": True,
             },
         )
     else:
@@ -176,6 +177,19 @@ def edit_task(request, pk):
     )
 
 
+def complete_task(request, pk):
+    task = Task.objects.get(pk=pk)
+    task.is_complete = not task.is_complete
+    task.save()
+    return redirect("list_tasks")
+
+
+def delete_task(request, pk):
+    task = Task.objects.get(pk=pk)
+    task.delete()
+    return redirect("list_tasks")
+
+
 def list_subjects(request):
     subjects = Subject.objects.all()
     return render(
@@ -188,7 +202,11 @@ def subject_detail(request, pk):
     return render(
         request,
         "tasks/subject_detail.html",
-        {"title": f"Tema {subject.name}", "subject": subject},
+        {
+            "title": f"Tema {subject.name}",
+            "subject": subject,
+            "tasks": subject.tasks.all(),
+        },
     )
 
 
