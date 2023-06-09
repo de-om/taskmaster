@@ -1,6 +1,5 @@
 <table class="table is-striped is-hoverable">
     <tr>
-        <th>ID de tarea</th>
         <th>Completada</th>
         <th>Título</th>
         <th>Fecha límite</th>
@@ -9,11 +8,6 @@
     </tr>
 {% for task in tasks %}
     <tr>
-        <td>
-            <a href='/tareas/{{ task.id }}/'>
-                {{ task.id }}
-            </a>
-        </td>
         <td>
             {% if task.is_complete %}
                 Completada
@@ -24,11 +18,13 @@
             {% endif %}
         </td>
         <td>
+            <a href='/tareas/{{ task.id }}/'>
             {% if forloop.first %}
                 {{ task.title|capfirst|add:' ' }}
             {% else %}
                 {{ task.title }}
             {% endif %}
+            </a>
         </td>
         <td>
             {% if task.due_date %}

@@ -1,3 +1,5 @@
+import datetime
+
 from django.core.exceptions import ValidationError
 from django.db import models
 from django.utils import timezone
@@ -67,3 +69,12 @@ class Task(models.Model):  # en singular
 
     def __str__(self):
         return f"Tarea #{self.pk}: {self.title} [{self.due_date}]"
+
+    def progress(self) -> float | None:
+        if self.due_date:
+            total_days = self.due_date - self.created.date()
+            elapsed = datetime.datetime.now().date() - self.created.date()
+
+            progress = int(100 * elapsed / total_days)
+            return progress if 0 <= progress <= 100 else 100
+        return None

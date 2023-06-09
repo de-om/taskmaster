@@ -5,6 +5,8 @@
   {% include 'tasks/task_table.html' %}
 
   {% if task_detail %}
+    <label for="task_progress">Task progress {{ tasks.0.progress }} %</label>
+    <progress id="task_progress" value="{{ tasks.0.progress }}" max="100">{{ tasks.0.progress }} %</progress>
     <a href="{% url 'borrar' pk=tasks.0.pk %}" class="button is-danger">
       Borrar tarea
     </a>

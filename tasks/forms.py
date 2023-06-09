@@ -36,7 +36,7 @@ class CreateTaskForm(forms.ModelForm):
 class EditTaskForm(forms.ModelForm):
     class Meta:
         model = Task
-        fields = ["title", "subject", "due_date", "priority", "urgent"]
+        fields = ["title", "subject", "due_date", "priority", "urgent", "is_complete"]
 
     due_date = forms.DateField(
         required=False,
