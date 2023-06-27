@@ -16,7 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path, re_path
-from tasks import views
+
+from tasks import api, views
+from tasks.api import API_Create
 
 urlpatterns = [
     path("", views.homepage, name="homepage"),
@@ -36,4 +38,8 @@ urlpatterns = [
     path("temas/<int:pk>/", views.subject_detail),
     path("admin/", admin.site.urls),
     path("__debug__/", include("debug_toolbar.urls")),
+    # API
+    path("api/tasks/", api.api_get),
+    path("api/tasks/<int:id>", api.api_get),
+    path("api/tasks/create/", API_Create.as_view()),
 ]
